@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Add new Rule</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+		<div class="register">
+			<h1>Add New</h1>
+			<form action="{{ url_for('regist_rules') }}" method="post" autocomplete="off">
+                <input type="text" name="about" placeholder="about" id="ip" required>
+                <label for="about">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="modality" placeholder="Routing Rules" id="modality" required>
+                <label for="modality">
+					<i class="fas fa-user"></i>
+				</label>
+                <input type="text" name="target" placeholder="Target" id="target" required>
+                <label for="target">
+					<i class="fas fa-cloud-download-alt"></i>
+				</label>
+				<input type="email" name="contact" placeholder="Contact" id="contact" required>
+                <label for="contact">
+					<i class="fas fa-address-book"></i>
+				</label>
+				<input type="text" name="coment" placeholder="coment" id="coment" required>
+                <label for="coment">
+					<i class="fas fa-cloud-upload-alt"></i>
+				</label>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="DONE">
+			</form>
+		</div>
+	</body>
+</html>

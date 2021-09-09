@@ -1,0 +1,36 @@
+{% extends 'layout_admin.html' %}
+
+
+{% block title %}Edit target{% endblock %}
+{% block content %}
+<h1>Edit</h1>
+<div class="col-md-4 offset-md-4">
+    <form action="/updateTarget/{{i.0}}", method="POST">
+        <div class="form-group">
+            <input type="text" name="targetName" placeholder={{i.1}} id = "targetName" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="ip" placeholder={{i.2}} id = "ip" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="port" placeholder={{i.3}} id = "port" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="contact" placeholder={{i.4}} id = "contact" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="source" placeholder={{i.5}} id = "source" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="target" placeholder={{i.6}} id = "target" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block">
+                Save
+            </button>
+        </div>
+        
+    </form>
+</div>
+
+{% endblock %}

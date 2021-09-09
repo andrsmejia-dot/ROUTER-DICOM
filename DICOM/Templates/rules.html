@@ -1,0 +1,50 @@
+{% extends 'layout_admin.html' %}
+{% block title %}Rules{% endblock %}
+
+{% block content %}
+<h2>Routing Rules</h2>
+{% for i in rule: %}
+<table>
+    <tr>       
+        <td>            
+            <OPTION value={{i[0]}}>{{i[1]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>Routing Rule:</th>
+        <td>
+            <OPTION value={{i[0]}}>(@Modality@ == {{i[2]}})</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>Target:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[3]}}</OPTION>
+        </td>
+    </tr>    
+    <tr>
+        <th>Contact:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[4]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>Coment:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[5]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/editRules/{{i.0}}" class="btn btn-secondary" style="color:rgb(0, 0, 0)">Edit</a>
+            <a href="/deleteRules/{{i.0}}" class="btn btn-danger btn-delete">Delete</a>
+        </td>
+    </tr>
+</table>
+{% endfor %}
+
+<button type="submit" class="btn btn-success btn-block">
+    <a href="{{ url_for('regist_rules')}}" class="active" style="color:white">Add new</a>
+</button>
+
+{% endblock %}

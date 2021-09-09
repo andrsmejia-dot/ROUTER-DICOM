@@ -1,0 +1,28 @@
+{% extends 'layout_admin.html' %}
+
+
+{% block title %}Edit user{% endblock %}
+{% block content %}
+<h1>Edit</h1>
+<div class="col-md-4 offset-md-4">
+    <form action="/update/{{i.0}}", method="POST">
+        <div class="form-group">
+            <input type="text" name="username" placeholder={{i.1}} id = "username" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="password" placeholder={{i.2}} id = "password" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="email" placeholder={{i.3}} id = "email" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block">
+                Save
+            </button>
+        </div>
+        
+    
+    </form>
+</div>
+
+{% endblock %}

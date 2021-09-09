@@ -1,0 +1,57 @@
+{% extends 'layout_admin.html' %}
+{% block title %}Targets{% endblock %}
+
+{% block content %}
+<h2>Targets</h2>
+{% for i in target: %}
+<table>
+    <tr>
+        <th>Target name:</th>        
+        <td>            
+            <OPTION value={{i[0]}}>{{i[1]}}</OPTION>
+        </td>
+    </tr>    
+    <tr>
+        <th>IP:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[2]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>Port:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[3]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>Contact:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[4]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>Source:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[5]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>Target:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[6]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/editTarget/{{i.0}}" class="btn btn-secondary" style="color:rgb(0, 0, 0)">Edit</a>
+            <a href="/deleteTarget/{{i.0}} " class="btn btn-danger btn-delete" style="color:rgb(0, 0, 0)">Delete</a>
+        </td>
+    </tr>
+</table>
+{% endfor %}
+
+<button type="submit" class="btn btn-success btn-block">
+    <a href="{{ url_for('regist_targets')}}" class="active" style="color:white">Add new</a>
+</button>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'layout_admin.html' %}
+
+
+{% block title %}Edit Rules{% endblock %}
+{% block content %}
+<h1>Edit</h1>
+<div class="col-md-4 offset-md-4">
+    <form action="/updateRules/{{i.0}}", method="POST">
+        <div class="form-group">
+            <input type="text" name="about" placeholder={{i.1}} id = "about" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="modality" placeholder={{i.2}} id = "modality" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="target" placeholder={{i.3}} id = "target" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="contact" placeholder={{i.4}} id = "contact" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="coment" placeholder={{i.5}} id = "coment" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block">
+                Save
+            </button>
+        </div>
+        
+    </form>
+</div>
+
+{% endblock %}

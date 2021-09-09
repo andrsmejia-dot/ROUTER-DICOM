@@ -1,0 +1,124 @@
+{% extends 'layout_admin.html' %}
+{% block title %}Metadata{% endblock %}
+
+{% block content %}
+<h2>Metadata</h2>
+{% for i in patient: %}
+
+<table class="default" style="margin: 0 auto;">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+    <tr>       
+        <td>            
+            <OPTION value={{i[0]}}>{{i[1]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>imageType:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[2]}}</OPTION>
+        </td>
+    </tr>    
+    <tr>
+        <th>bodyPartExamined:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[3]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>sOPClassUID:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[4]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>studyDate:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[4]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>studyTime:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[4]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>modality:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[4]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>manufacturer:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[4]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>institutionName:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[4]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>studyDescription:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[4]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>institutionalDepartmentName:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[4]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>patientSex:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[4]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>patientAge:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[4]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>protocolName:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[4]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>studyID:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[4]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>seriesNumber:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[4]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>acquisitionNumber:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[4]}}</OPTION>
+        </td>
+    </tr>
+    <tr>
+        <th>photometricInterpretation:</th>
+        <td>
+            <OPTION value={{i[0]}}>{{i[4]}}</OPTION>
+        </td>
+    </tr>
+
+</table>
+{% endfor %}
+{% endblock %}

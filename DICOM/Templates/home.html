@@ -1,0 +1,80 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<h2>Home</h2>
+
+<div class="d-grid gap-2">
+    <a href="https://dicom-flask-uploader.herokuapp.com/" target="_blank"><button class="btn btn-primary" type="button">VIEWER</button></a>
+</div>
+
+<p id="hola">Welcome, <b>{{ username }}!</b></p>
+<div id = "gif">
+    <img src="https://thumbs.gfycat.com/MealyRepulsiveHarpyeagle-max-1mb.gif" alt="GIF" style="margin-left: auto; margin-right: auto; display: block;">
+</div>
+
+<h3>Consult Patient</h3>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css" />
+</head>
+<body id="busqueda">
+    <div class="container">    
+        <div class="row">
+            <div class="col-md-6">
+                <label>Select Study Description</label>
+                <select name="studyDescription" data-live-search="true" id="studyDescription" class="form-control" title="Select study description"> 
+                {% for row in patients %}
+                <option value="{{row.id}}">{{row.studyDescription}}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label>Select Modality</label>
+                <select name="modality" data-live-search="true" id="modality" class="form-control" title="Select modality"> </select>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#studyDescription").selectpicker();
+
+            $("#modality").selectpicker();
+
+            function load_data(type, category_id) {
+                $.ajax({
+                    url: "/consults",
+                    method: "POST",
+                    data: { type: type, category_id: category_id },
+                    dataType: "json",
+                    success: function (data) { //alert(category_id)
+                        var html = "";
+                        for (var count = 0; count < data.length; count++) {
+                            html += '<option value="' + data[count].id + '">' + data[count].name + "</option>";
+                        }
+                        if (type == "carData") {
+                            $("#studyDescription").html(html);
+                            $("#studyDescription").selectpicker("refresh");
+                        } else {
+                            $("#modality").html(html);
+                            $("#modality").selectpicker("refresh");
+                        }
+                    },
+                });
+            }
+
+            $(document).on("change", "#studDescription", function () {
+                var id = $("#studyDescription").val();
+                load_data("dicom", id);
+            });
+        });
+    </script>
+</body>
+</script>
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+		<div class="register">
+			<h1>Register</h1>
+			<form action="{{ url_for('regist_targets') }}" method="post" autocomplete="off">
+                <input type="text" name="targetName" placeholder="Target Name" id="ip" required>
+                <label for="targetName">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="ip" placeholder="IP" id="ip" required>
+                <label for="ip">
+					<i class="fas fa-check-double"></i>
+				</label>
+				<input type="text" name="port" placeholder="Port" id="port" required>
+                <label for="port">
+					<i class="fas fa-chevron-circle-right"></i>
+				</label>
+				<input type="email" name="contact" placeholder="Contact" id="contact" required>
+                <label for="contact">
+					<i class="fas fa-address-book"></i>
+				</label>
+				<input type="text" name="source" placeholder="Source" id="source" required>
+                <label for="source">
+					<i class="fas fa-cloud-upload-alt"></i>
+				</label>
+				<input type="text" name="target" placeholder="Target" id="target" required>
+                <label for="target">
+					<i class="fas fa-cloud-download-alt"></i>
+				</label>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="DONE">
+			</form>
+		</div>
+	</body>
+</html>

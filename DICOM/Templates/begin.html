@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DICOM ROUTER</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+		<div class="login">
+			<h1>DICOM ROUTER</h1>
+			<form action="{{ url_for('login') }}" method="post">
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="click to begin">
+			</form>
+		</div>
+	</body>
+</html>

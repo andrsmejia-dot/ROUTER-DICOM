@@ -1,0 +1,25 @@
+{% extends 'layout_admin.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block options %}
+<h1>Dicom</h1>
+<a href="{{ url_for('home')}}"><i class="fas fa-home"></i>Home</a>
+<a href="{{ url_for('profile')}}"><i class="fas fa-user-circle"></i>Profile</a>
+<a href="{{ url_for('register')}}"><i class="fas fa-user"></i>Users</a>
+<a href="{{ url_for('target')}}"><i class="fas fa-bullseye"></i>Targets</a>
+<a href="{{ url_for('rules')}}"><i class="fas fa-file-signature"></i>Rules</a>
+<a href="{{ url_for('logout')}}"><i class="fas fa-sing-out-all"></i>Logout</a>
+<a href="{{ url_for('upload')}}"><i class="fas fa-sing-out-all"></i>upload</a>
+{% endblock %}
+
+{% block content %}
+
+<a href="https://dicom-flask-uploader.herokuapp.com/" target="_blank"><button type="button" class="btn btn-lg btn-primary" disabled>VIEWER</button></a>
+<button type="submit" class="btn btn-secondary btn-lg" disabled value="sendFiles">Send Files</button>
+
+<h2>Home</h2>
+<p>Welcome, <b>{{username}}!</b></p>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Cerebellar_hemisphere_-_animation.gif" alt="GIF" style="margin-left: auto; margin-right: auto; display: block;" >
+{% endblock %}
